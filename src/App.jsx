@@ -1,30 +1,24 @@
-import React, { useState } from "react";
-import TodoItem from "./TodoItem";
+import React, { useState } from "react"
 
 
 
 const App = () => {
-    let [inputfield,setinputfield]=useState("")
-    const [todoitem,settodoitem]=useState([])
+    let [counter,setcounter]=useState(0)
 
-    const handlechange=(event)=>{
-        setinputfield(event.target.value)
+    const handleIncrement=()=>{
+        setcounter(counter+1)
 
     }
-    const handleclick=()=>{
-        if(inputfield!==""){
-            settodoitem([...todoitem,inputfield])
-            setinputfield("")
+    const handleDecrement=()=>{
+        if(counter!==0){
+            setcounter(counter-1)
         }
+        else{
+            alert("Sorry:Zero Limit Reached")
+        }
+        
     }
-    const handledeletelick=(index)=>{
-        let newtodoitem=todoitem.filter((item,ind)=>{
-            return ind!==index 
-
-        })
-        settodoitem(newtodoitem)
-
-    }
+    
 
 
 
@@ -32,32 +26,21 @@ const App = () => {
 
     return (
         <>
-
             <div className="main_div">
-
                 <div className="center_div">
-                    <div className="heading_div">
-                        <h1>TODO LIST</h1>
-                    </div>
-                    <div className="adding_div">
-                        <input type="text" name="inp" value={inputfield} onChange={handlechange} placeholder="Add an Item" id="" />
-                        <button onClick={handleclick}>+</button>
-                    </div>
-                    <div className="todo_div">
-                        {todoitem.map((element,index)=>{
-                            return <TodoItem key={index} id={index} message={element} delete={handledeletelick}/>
-
-                        })}
+                    <div className="counter_div">
+                        {counter}
                     </div>
 
-
-
+                    <div className="button_div">
+                        <button onClick={handleIncrement}>Increment</button>
+                        <button disabled={counter<0} onClick={handleDecrement}>Decrement</button>
+                    </div>
                 </div>
             </div>
-
-
         </>
     )
+
 }
 
 

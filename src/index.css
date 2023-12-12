@@ -26,75 +26,40 @@ body{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.15);
 
 }
-.heading_div{
-  text-align: center;
-  font-weight: 500;
-  border-bottom: 1px solid gray;
-}
-.adding_div{
-  margin-top: 17px;
-  display: flex;
-  justify-content: space-between;
-}
-.adding_div button{
-  width: 50px;
-  height: 44px;
-  color: #333;;
-  border: none;
-  outline: none;
-  border-radius: 50%;
-  font-size: 30px;
-  font-weight: bold;
-  background-color:#d1d1d1;
-  transition: background-color 0.3s ease;
-  
-}
-.adding_div button:hover {
-  background-color: #b0b0b0; /* Darker gray for hover effect */
-}
-.adding_div input{
-  text-align: center;
-  width: 79%;
-  margin: 0px 15px;
-  font-size: 23px;
-  font-weight: 550;
-  color: black;
-  border-radius: 10px;
-  border: 1px solid rgb(111, 109, 109);
-  outline: none;
-}
-
-
-.todo_div{
-  margin-top: 19px;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-}
-.item{
-  display: flex;
-  padding: 10px 20px;
-  /* border-bottom:1px solid gray ; */
-
-}
-.item button{
-  width: 30px ;
-  text-align: center;
-  font-weight: bold;
-  border: none;
-  outline: none;
+.counter_div{
+  margin-top: 80px;
   color: white;
-  margin-right: 19px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgb(236, 177, 105);
-  transition: background-color 0.3 ease;
+  background-color: rgb(99, 4, 189);
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.item button:hover{
-  background-color: rgb(233, 160, 70);
+.button_div{
+  height: 200px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+
 }
-.item p{
-  font-size: 19px;
+.button_div button{
+  width: 130px;
+  height: 60px;
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgb(99, 4, 189);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
   font-weight: 600;
-  margin-bottom: 0;
+  transition: background-color 0.3 ease;
+  
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.button_div button:hover{
+  background-color: rgb(88, 7, 163);
+
 }
