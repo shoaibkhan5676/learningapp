@@ -1,47 +1,30 @@
 import React, { useState } from "react"
+import questions from "./Question"
+import  Accordion  from "./MyAccordian"
 
 
 
-const App = () => {
-    let [counter,setcounter]=useState(0)
 
-    const handleIncrement=()=>{
-        setcounter(counter+1)
+const App=()=>{
 
-    }
-    const handleDecrement=()=>{
-        if(counter!==0){
-            setcounter(counter-1)
-        }
-        else{
-            alert("Sorry:Zero Limit Reached")
+    const [data,setdata]=useState(questions)
+
+    return(
+        <>
+        <section className="main-div">
+        <h1>Simple Questions Answer</h1>
+        {
+            data.map((value,index)=>{
+                return <Accordion key={index} {...value}/>
+                
+            })
         }
         
-    }
-    
-
-
-
-
-
-    return (
-        <>
-            <div className="main_div">
-                <div className="center_div">
-                    <div className="counter_div">
-                        {counter}
-                    </div>
-
-                    <div className="button_div">
-                        <button onClick={handleIncrement}>Increment</button>
-                        <button disabled={counter<0} onClick={handleDecrement}>Decrement</button>
-                    </div>
-                </div>
-            </div>
+        </section>
         </>
     )
-
 }
+
 
 
 export default App

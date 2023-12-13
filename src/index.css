@@ -7,59 +7,83 @@
 body{
   font-family: 'Poppins', sans-serif;
 }
+:root {
+  --for-dark-color: #007FFF;
+  --lite-dark-color: #11151A;
+  --lite-blue-color:#2F81F7;
+  --lite-bluissh-body-background-color:#E6E6FA;
+}
 
 
-.main_div{
+body {
   width: 100%;
   height: 100vh;
-  background-color: #e6e6fa;
+  background-color: rgb(116, 163, 204);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(#fcf5f5, #eff4fd);
 }
-.center_div{
-  width: 400px;
-  min-height: 450px;
-  background-color: white;
-  border-radius: 15px;
-  padding: 20px 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.15);
 
-}
-.counter_div{
-  margin-top: 80px;
-  color: white;
-  background-color: rgb(99, 4, 189);
-  text-align: center;
-  font-size: 35px;
-  font-weight: bold;
+.main-div {
+  width: 50vw;
+  padding: 50px;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 8px;
+  margin-top: 300px;
 }
-.button_div{
-  height: 200px;
+
+h1 {
+  text-align: center;
+  font-family: "Bitter", serif;
+  text-transform: capitalize;
+  font-size: 32px;
+  letter-spacing: 5;
+  word-spacing: 5px;
+  margin-bottom: 50px;
+  color: #2c3148;
+}
+
+.main-heading {
   display: flex;
-  text-align: center;
-  justify-content: space-between;
-
+  margin-top: 30px;    
+  padding: 23px 0px 3px 33px;
+  background: #f1f4ff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+  transition: all ease 0.3;
 }
-.button_div button{
-  width: 130px;
-  height: 60px;
-  margin-top: 60px;
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: rgb(99, 4, 189);
-  color: white;
-  border-radius: 10px;
-  border: none;
-  outline: none;
+
+.main-heading h3 {
+  margin-left: 30px;
+  font-family: "Mate SC", serif;
+  color: #303243;
+  font-family: "Raleway", sans-serif;
+  word-spacing: 1px;
+  letter-spacing: 1px;
   font-weight: 600;
-  transition: background-color 0.3 ease;
-  
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
 }
-.button_div button:hover{
-  background-color: rgb(88, 7, 163);
-
+.main-heading p {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  text-align: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  background: #fff;
+  padding: 7px;
+}
+.answers {
+  padding: 30px 20px 40px 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  word-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.7;
+  background: #fcf5f5;
+  color: rgb(40, 37, 53);
+  transition: all ease 0.3;
 }
