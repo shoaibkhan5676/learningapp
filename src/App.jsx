@@ -1,26 +1,67 @@
-import React, { useState } from "react"
-import questions from "./Question"
-import  Accordion  from "./MyAccordian"
+import React,{useState} from "react"
+import Header from "./Header"
+import Footer from "./Footer"
+import TypeNote from "./TypeNote"
+import Note from "./Note"
 
 
+const App = () => {
+    
+    const [val,setval]=useState({
+        title:"",
+        disc:"",
 
-
-const App=()=>{
-
-    const [data,setdata]=useState(questions)
-
-    return(
-        <>
-        <section className="main-div">
-        <h1>Simple Questions Answer</h1>
+    })
+    const [arr,setarr]=useState([
         {
-            data.map((value,index)=>{
-                return <Accordion key={index} {...value}/>
-                
-            })
+            title:"Example",
+            disc:"Text Here",
+    
         }
+    ])
+
+    const handleClick=()=>{
+        setarr((prev)=>(
+            [...prev,val]
+        ))
+
+
+    }
+
+    const handlechange=(event)=>{
+        let {name,value}=event.target;
+        setval((prevInfo)=>({
+            ...prevInfo,
+            [name]:value,  
+
+        }))     
+
+    }
+    const handledelete=(i)=>{
+
+        let new_arr=arr.filter((element,index)=>{
+            return index!==i
+
+        })
+        setarr(new_arr)
+
+    }
+
+
+
+    return (
+        <>
+        <Header/>
+        <TypeNote change={handlechange} click={handleClick} val={val}/>
+        {arr.map((element,index)=>{
+            return <Note key={index} id={index} delete={handledelete} title={element.title} discription={element.disc}/>
+
+        })}
         
-        </section>
+        <Footer />
+
+
+
         </>
     )
 }

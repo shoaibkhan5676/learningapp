@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --for-dark-color: #007FFF;
+  --lite-dark-color: #11151A;
+  --lite-blue-color:#2F81F7;
+  --lite-bluissh-body-background-color:#E6E6FA;
+  --yellow-color:#f5ba13;
+}
 *{
   margin:0;
   padding: 0;
@@ -6,84 +15,98 @@
 }
 body{
   font-family: 'Poppins', sans-serif;
-}
-:root {
-  --for-dark-color: #007FFF;
-  --lite-dark-color: #11151A;
-  --lite-blue-color:#2F81F7;
-  --lite-bluissh-body-background-color:#E6E6FA;
-}
-
-
-body {
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(116, 163, 204);
   display: flex;
+  flex-direction: column;
+  /* background-color: var(--lite-bluissh-body-background-color); */
+}
+
+
+.header{
+  color: white;
+  width: 100%;
+  background-color: var(--yellow-color);
+  display: flex;
+  box-shadow: 5px 3px 15px -5px rgba(0,0,0,0.3);
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(#fcf5f5, #eff4fd);
+  padding: 13px 0;
+
+
+}
+.header img{
+  width: 110px;
+  height: 60px;
 }
 
-.main-div {
-  width: 50vw;
-  padding: 50px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
-    rgba(17, 17, 26, 0.1) 0px 8px 8px;
-  margin-top: 300px;
-}
 
-h1 {
-  text-align: center;
-  font-family: "Bitter", serif;
-  text-transform: capitalize;
-  font-size: 32px;
-  letter-spacing: 5;
-  word-spacing: 5px;
-  margin-bottom: 50px;
-  color: #2c3148;
-}
 
-.main-heading {
+.main_note{
+  width: 400px;
   display: flex;
-  margin-top: 30px;    
-  padding: 23px 0px 3px 33px;
-  background: #f1f4ff;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
-  transition: all ease 0.3;
+  flex-direction: column;
+  margin:20px auto;
+  padding: 10px;
+  color:  #CCCCCC;
+  box-shadow: 3px 5px 15px -5px rgba(0,0,0,0.5);
 }
 
-.main-heading h3 {
-  margin-left: 30px;
-  font-family: "Mate SC", serif;
-  color: #303243;
-  font-family: "Raleway", sans-serif;
-  word-spacing: 1px;
-  letter-spacing: 1px;
-  font-weight: 600;
-  font-size: 18px;
+.main_note input{
+  width: 100%;
+  font-size: 20px;
+  outline: none;
+  border: none;  
 }
-.main-heading p {
-  cursor: pointer;
-  border-radius: 50%;
-  width: 30px;
+.main_note textarea{
+  width: 100%;
+  outline: none;
+  border: none;
+  margin-top: 8px;
+  resize: none;
+  min-height: 70px;
+
+}
+.main_note button{
+  border-radius: 35%;
+}
+.plus_sign{
+  color: var(--for-dark-color);
+
+}
+
+.note{
+  min-width: 300px;
+  height: 150px;
+  float: left;
+  /* border: 2px solid black; */
+  margin: 40px 60px;
+  box-shadow: 5px 3px 15px -5px rgba(0,0,0,0.3);
+  padding: 10px;
+  position: relative;
+}
+.note p{
+  margin-bottom: 9px;
+}
+.note h2{
   text-align: center;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-  background: #fff;
-  padding: 7px;
+  border-bottom: 1px solid rgb(195, 191, 191) ;
 }
-.answers {
-  padding: 30px 20px 40px 20px;
-  font-family: "Raleway", sans-serif;
-  font-size: 15px;
-  word-spacing: 2px;
-  font-weight: 400;
-  line-height: 1.7;
-  background: #fcf5f5;
-  color: rgb(40, 37, 53);
-  transition: all ease 0.3;
+#butn{
+  width: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
+
+
+#footer{
+  position: relative;
+  clear: both;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p{
+  margin: 0;
+  text-align: center;
+} 
+
