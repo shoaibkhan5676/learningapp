@@ -31,13 +31,19 @@ const TypeNote=(props)=>{
 
     // }
 
+    const [expand,setexpand]=useState(false)
+
     return(
         <>
-        <div className='main_note'>
+        <div onDoubleClick={()=>setexpand(false)} className='main_note'>
             <form >
-            <input type="text" name="title" id="" value={props.val.title} onChange={(s)=>{props.change(s)}} placeholder='Title: ' autoComplete='off' />
-            <textarea name="disc" id="" cols="" rows="" value={props.val.disc} onChange={(s)=>{props.change(s)}} placeholder='Write A New Note...'></textarea>
+                {expand?
+            <input type="text"  name="title" id="" value={props.val.title} onChange={(s)=>{props.change(s)}} placeholder='Title: ' autoComplete='off' />
+            :null}
+            <textarea name="disc" id=""  cols="" onClick={()=>setexpand(true)} rows="" value={props.val.disc} onChange={(s)=>{props.change(s)}} placeholder='Write A New Note...'></textarea>
+            {expand?
             <Button onClick={()=>{props.click()}}><AddIcon className='plus_sign'/></Button>
+            :null}
             </form>
         </div>
         

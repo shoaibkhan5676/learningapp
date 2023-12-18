@@ -1,71 +1,38 @@
-import React,{useState} from "react"
-import Header from "./Header"
-import Footer from "./Footer"
-import TypeNote from "./TypeNote"
-import Note from "./Note"
+import React from "react"
+import { Route,Routes } from "react-router-dom"
+import About from "./About"
+import Contact from "./Contact"
+import Error from "./Error"
+import Menu from "./Menu"
+import User from "./User"
 
+const App=()=>{
+    const Home=()=>{
+        return (
+            <>
+            <h1>This is Home</h1>
+            
+            </>
+        )
 
-const App = () => {
+    }
     
-    const [val,setval]=useState({
-        title:"",
-        disc:"",
 
-    })
-    const [arr,setarr]=useState([
-        {
-            title:"Example",
-            disc:"Text Here",
-    
-        }
-    ])
-
-    const handleClick=()=>{
-        setarr((prev)=>(
-            [...prev,val]
-        ))
-
-
-    }
-
-    const handlechange=(event)=>{
-        let {name,value}=event.target;
-        setval((prevInfo)=>({
-            ...prevInfo,
-            [name]:value,  
-
-        }))     
-
-    }
-    const handledelete=(i)=>{
-
-        let new_arr=arr.filter((element,index)=>{
-            return index!==i
-
-        })
-        setarr(new_arr)
-
-    }
-
-
-
-    return (
+    return(
         <>
-        <Header/>
-        <TypeNote change={handlechange} click={handleClick} val={val}/>
-        {arr.map((element,index)=>{
-            return <Note key={index} id={index} delete={handledelete} title={element.title} discription={element.disc}/>
+        <Menu/>
+        <Routes>
+            <Route exact  path='/' element={<Home/>}/>
+            <Route exact  path='/about' element=<About name="About" />/>
+            <Route exact path='/contact/:admin' element=<Contact/>/>
+            <Route exact path='/user/:name/:lname' element=<User/>/>
+            <Route path="/*" element=<Error/>/>
 
-        })}
-        
-        <Footer />
-
-
-
+        </Routes>
+      
+     
+       
         </>
     )
 }
-
-
-
 export default App
